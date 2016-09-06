@@ -1,0 +1,4 @@
+usages:
+   q:exit
+   b:go back
+   display number:valid number 
