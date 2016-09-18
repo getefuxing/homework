@@ -104,7 +104,7 @@ while not flag:
                                             shop[2] = value
 
                                             print(" ".center(50, '*'))
-                                            print(" Add %s into shop car,you current balance  is %s " %(shop,balance))
+                                            print(" Add %s into shop car,you current balance  is %s " %(shopping_cart,balance))
                                         else:
                                             print("Your balance is %s,can not afford this..." %(balance,))
                                     else:
