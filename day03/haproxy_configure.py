@@ -30,6 +30,7 @@ def check(data):
 
 def add(title,content):
     record_data = check(title)
+    backend_title = 'backend %s' %title
     content_list = "server %s %s weight %d maxconn %d" \
                    %(content["server"],content["server"],content["weight"],content["maxconn"])
     if len(record_data) == 0:
@@ -37,7 +38,7 @@ def add(title,content):
         with open(haproxy_file,'r') as old ,open(new_file,'w') as new:
             for line in old:
                 new.write(line)
-            new.write( "\n"+ title + "\n")
+            new.write( "\n"+ backend_title + "\n")
             for i in record_data:
                 new.write(" " * 8+ i + "\n")
     else:
