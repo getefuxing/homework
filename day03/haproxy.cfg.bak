@@ -23,10 +23,8 @@ frontend oldboy.org
         acl www hdr_reg(host) -i www.oldboy.org
         use_backend www.oldboy.org if www
 backend www.oldboy.org
-        server 100.1.7.20 100.1.7.20 weight 20 maxconn 3000
-        server 100.1.7.21 100.1.7.21 weight 20 maxconn 3000
-        server 192.168.0.1 192.168.0.1 weight 20000 maxconn 30
-        server 192.168.0.2 192.168.0.2 weight 200 maxconn 30
+        server 100.1.7.90 100.1.7.90 weight 20 maxconn 3000
+        server 100.1.7.10 100.1.7.10 weight 20 maxconn 3000
 backend buy.oldboy.org
         server 100.1.7.90 100.1.7.90 weight 20 maxconn 3000
         server 100.1.7.10 100.1.7.10 weight 20 maxconn 3000
