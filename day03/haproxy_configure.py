@@ -85,10 +85,13 @@ def write_file(title,content):
         for line in old:
             if line.strip().startswith("backend") and line.strip() == backend_title:
                 flag = True
-                new.write(line)
-                for j in content:
-                    new.write(" " * 8 + j + "\n")
-                continue
+                if len(content) == 0:
+                    continue
+                else:
+                    new.write(line)
+                    for j in content:
+                        new.write(" " * 8 + j + "\n")
+                    continue
             if flag and line.strip().startswith("backend"):
                 flag = False
                 new.write(line)
