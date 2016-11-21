@@ -70,7 +70,7 @@ def operation(expression):
         del number_list[0]
         del symbol_list[0]
     number_list,symbol_list = special(number_list,symbol_list)
-    print(number_list,symbol_list)
+#    print(number_list,symbol_list)
     for index,i in enumerate(number_list):
         if re.search("[*/]",i):
             res = multiplication_and_division(i)
