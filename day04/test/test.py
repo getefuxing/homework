@@ -511,23 +511,61 @@ for i in range(0,101):
 
 #去已经提取到的数据中在提取数据
 
-import re
-a = "1 + ((2+3) * 5 * (9-4)) / (5 + 5)"
+# import re
+# a = "1 + ((2+3) * 5 * (9-4)) / (5 + 5)"
+#
+# r1 = re.split("\(([^()]*)\)",a)
+#
+# r2 = re.search("\([^()]*\)", a)
+#
+# r5 = r2.group().strip("()")
+#
+# print(r1,r5)
+#
+#
+# b = " - 1 * 5 + 7 * 8 / 2"
+#
+# print(eval(r5))
+#
+# pattern = "\(([\+\*/\-0-9]+)\)"
+#
+# r3 = re.split(pattern,a)
+# print(r3)
 
-r1 = re.split("\(([^()]*)\)",a)
 
-r2 = re.search("\([^()]*\)", a)
+#页面上做展示(字符串类型一个xml格式数据)
+#配置文件(文件，内部输的xml格式)
 
-r5 = r2.group().strip("()")
+# from xml.etree import ElementTree as ET
+#
+# tree = ET.parse("data.xml")
+# root  = tree.getroot()
+#
+#
+# for child in root:
+#     print(child.tag,child.attrib)
+#     for grandchild in child:
+#         print(grandchild.tag,grandchild.attrib)
 
-print(r1,r5)
+import shutil
+
+import subprocess,tarfile,zipfile
+
+#res = subprocess.call("df -h",shell=True)
+
+#print(res)
 
 
-b = " - 1 * 5 + 7 * 8 / 2"
 
-print(eval(r5))
 
-pattern = "\(([\+\*/\-0-9]+)\)"
 
-r3 = re.split(pattern,a)
-print(r3)
+res1 = subprocess.check_output("ls -l",shell=True)
+
+print(res1)
+
+
+a = {"cardnumber":"622346571230673975","username":"sp","password":"1234456","status":"2"}
+
+
+
+
