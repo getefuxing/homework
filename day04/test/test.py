@@ -565,6 +565,8 @@ print(res1)
 
 
 a = {"cardnumber":"622346571230673975","username":"sp","password":"1234456","status":"2"}
+b = {"cardnumber": "622346571230673975", "password": "123456", "status": "2",
+"username": "sp","save":0,"create_time":"2016-11-12","额度":15000.00,"可用额度":15000.00}
 
 
 

@@ -9,11 +9,19 @@ import sys
 import json
 
 USER_AUTH = {"auth":False,"userinfo":None}
-PRIMARY_MENU = ["查询","提现","还款","存款","消费记录","账单","退出"]
+def login_required(func):
+    def wrapper(*args,**kwargs):
+        if USER_AUTH.get('auth'):
+            return func(*args,**kwargs)
+        else:
+            exit("User is not authenticated.")
+    return wrapper
 
 
-def inquire():
-    pass
+@login_required
+def inquire(user_data):
+    print("aa")
+
 
 def withdrawcash():
     pass
@@ -25,6 +33,9 @@ def deposit():
     pass
 
 def Record():
+    pass
+
+def quit():
     pass
 
 
@@ -59,11 +70,29 @@ def login():
     return USER_AUTH
 
 
-def main():
-    for index,item in enumerate(PRIMARY_MENU,1):
-        print(index,item)
+@login_required
+def main(user_data):
+    print('''
+1.查询
+2.取款
+3.还款
+4.存款
+6.账单
+7.退出''')
+    primary_menu_dict = {"1":inquire}
+    flag = False
+    while not flag:
+        user_option = input(">>:").strip()
+        if user_option in primary_menu_dict:
+            primary_menu_dict[user_option](user_data)
+        else:
+            print("Option does not exist!")
 
 def run():
     ret = login()
     if ret["auth"]:
-        main()
+        user_data= USER_AUTH["userinfo"]
+        main(user_data)
+
+
+run()
