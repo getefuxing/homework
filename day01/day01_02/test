@@ -1,0 +1,18 @@
+1.石桥测试
+	openstack:
+		控制节点:172.28.11.11、172.28.11.12、172.28.11.13   VIP:172.28.11.10
+		查询节点: openstack host list  --- 计算节点/存储节点
+
+	ceph：
+	ssd	sqcs-storage-1,sqcs-storage-2,sqcs-storage-3   89TB
+		sqcs-storage-1-sqcs-storage-34
+
+	hdd	sqcs-compute-1,sqcs-compute-2,sqcs-compute-3   271 TB
+		sqcs-storage-35-sqcs-storage-46  sqcs-compute-1-sqcs-compute-11
+
+	hdd	sqcs-compute-12,sqcs-compute-13,sqcs-compute-14   398 TB
+		sqcs-compute-12-sqcs-compute-44
+		
+	监控：
+		prometheus: 172.28.11.14:9090
+		grafana：http://172.28.11.10:3000/
